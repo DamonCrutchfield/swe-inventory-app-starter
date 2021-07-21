@@ -8,3 +8,8 @@ Boilerplate code for SWE Bootcamp Project
 4. Find your bliss!
 
 Linda's Edit: :)
+
+Rules 
+
+Teammates will effectively communicate with each other 
+Teammates will be responsible for completing work
