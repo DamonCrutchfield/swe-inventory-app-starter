@@ -1,5 +1,5 @@
-# swe-inventory-app-starter
-Boilerplate code for SWE Bootcamp Project
+<!-- # swe-inventory-app-starter
+Boilerplate code for SWE Bootcamp Project -->
 
 ## How to use 
 1. Fork this repo
@@ -7,7 +7,7 @@ Boilerplate code for SWE Bootcamp Project
 3. npm install
 4. Find your bliss!
 
------------------------------------
+----------------------------------------------------
 ------------Team Constitution-----------------------
 
 (1). Respect each other 
@@ -19,6 +19,24 @@ Boilerplate code for SWE Bootcamp Project
 (7). Git pull origin main (pulling from main branch to personal)
 (8). Git pull origin <local branch name> (pulling from personal branch to main)
 
+------------Product Description-----------------------
+
+(1). Build and implement an inventory application utilizing our bootcamp stack
+
+------------Collaborators-----------------------------
+
+Abdi - Damon - Nate - James 
+
+
+------------Insstallation Instructions----------------------
+1. Fork this repo
+2. Check out the sample task board.
+3. npm install
+4. Find your bliss!
+
+
+
+----------------------Assets--------------------------------
 
 https://excalidraw.com/#room=1ea0f098c562a7850458,8B9wOPkOmM0MiFLarcIdoA
 
