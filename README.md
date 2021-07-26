@@ -22,4 +22,3 @@ Boilerplate code for SWE Bootcamp Project
 
 https://excalidraw.com/#room=1ea0f098c562a7850458,8B9wOPkOmM0MiFLarcIdoA
 
-
