@@ -5,7 +5,7 @@ Boilerplate code for SWE Bootcamp Project
 1. Fork this repo
 2. Check out the sample task board.
 3. npm install
-4. Find your bliss!
+4. Find your bliss
 
 -----------------------------------
 ------------Team Constitution-----------------------
