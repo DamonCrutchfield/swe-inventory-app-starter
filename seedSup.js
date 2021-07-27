@@ -12,7 +12,7 @@ const seedSup = async () => {
     const suppliersSeedPath = path.join(__dirname, 'suppliers.json'); // creates path to seed data
     const suppliersBuffer = await fs.readFile(suppliersSeedPath); // reads json
     const {suppliersData} = JSON.parse(String(suppliersBuffer)); //parses supplierData
-
+    console.log("SUP DATA", suppliersData)
     const suppliersDataPromises = suppliersData.map(supplier => Supplier.create(supplier))
     await Promise.all(suppliersDataPromises)
     console.log("db populated!")

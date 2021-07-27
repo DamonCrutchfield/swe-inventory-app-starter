@@ -32,7 +32,7 @@ app.use(express.static('public'));
 seed();
 
 
-seedSup();
+// seedSup();
 
 seedW();
 seedInv();
