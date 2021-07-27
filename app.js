@@ -53,6 +53,10 @@ app.get('/allitems', async (req, res) => {
     res.json(items); //points to items handlebar
 })
 
+app.get('/supplier/:id' , async(req,res) => {
+    const supplier = await Supplier.findByPk(req.params.id)
+    res.render('supplier', {supplier})
+})
 
 app.get('/all-items', async (req, res) => {
     const items = await Item.findAll()
@@ -66,9 +70,23 @@ app.get('/all-users', async (req, res) => {
 
 app.get('/warehouses/:id', async (req, res) => {
     const warehouse = await Warehouse.findByPk(req.params.id);
-    res.json('warehouse', {warehouse});
+    res.render('warehouse', {warehouse});
 })
 
+app.get('/homepage', async (req, res) => {
+    const homepage = await Warehouse.findAll()
+    res.render('homepage', {homepage}); //points to items handlebar
+})
+
+app.get('/inventory/:id', async (req,res) => {
+    const inventory = await Inventory.findByPk(req.params.id)
+    res.render("inventory", {inventory} )
+})
+
+app.get('/additems', async(req,res) => {
+    const addItem = await Item.create(req.body)
+    res.render('additems', {addItem})
+})
 
 
 app.listen(PORT, () => {

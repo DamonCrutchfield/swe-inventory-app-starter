@@ -1,8 +1,9 @@
 {
   "data": [
-      {"name" : "Sriracha", "image" : "/img/Sriracha.gif"},
-      {"name" : "Franks", "image": "/img/Franks.gif"},
-      {"name" : "Tobasco", "image": "/img/Tobasco.gif"}
+      {"name" : "Gatorade", "image" : "/img/gatorade.png"},
+      {"name" : "Napkins", "image": "/img/napkins.png"},
+      {"name" : "Plates", "image": "/img/plates.png"},
+      {"name" : "testItem", "image": ""}
   ]  
 }
 
