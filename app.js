@@ -44,7 +44,10 @@ app.get('/items', async (req, res) => {
     res.render('items', {items}); //points to items handlebar
 })
 
-
+app.get('/', async (req, res) => {
+    const items = await Item.findAll()
+    res.render('items', {items}); //points to items handlebar
+})
 
 
 app.get('/items/:id', async (req, res) => {
