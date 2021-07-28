@@ -27,7 +27,7 @@ app.set('view engine', 'handlebars');
 
 // serve static assets from the public/ folder
 app.use(express.static('public'));
-
+app.use(require('body-parser').urlencoded());
 
 seed();
 
@@ -44,6 +44,9 @@ app.get('/items', async (req, res) => {
     res.render('items', {items}); //points to items handlebar
 })
 
+
+
+
 app.get('/items/:id', async (req, res) => {
     const item = await Item.findByPk(req.params.id)
     res.render('item', {item}); 
@@ -53,6 +56,10 @@ app.get('/allitems', async (req, res) => {
     res.json(items); //points to items handlebar
 })
 
+app.get('/supplier/:id' , async(req,res) => {
+    const supplier = await Supplier.findByPk(req.params.id)
+    res.render('supplier', {supplier})
+})
 
 app.get('/all-items', async (req, res) => {
     const items = await Item.findAll()
@@ -66,10 +73,33 @@ app.get('/all-users', async (req, res) => {
 
 app.get('/warehouses/:id', async (req, res) => {
     const warehouse = await Warehouse.findByPk(req.params.id);
-    res.json('warehouse', {warehouse});
+    res.render('warehouse', {warehouse});
 })
 
+app.get('/homepage', async (req, res) => {
+    const homepage = await Warehouse.findAll()
+    res.render('homepage', {homepage}); //points to items handlebar
+})
 
+app.get('/inventory/:id', async (req,res) => {
+    const inventory = await Inventory.findByPk(req.params.id)
+    res.render("inventory", {inventory} )
+})
+
+app.get('/add-item-form', (req, res) => {
+    res.render('addItemForm');
+})
+
+app.post('/new-item', async (req, res) => {
+    const newitem = await Item.create(req.body);
+    const founditem = await Item.findByPk(newitem.id);
+    if(founditem) {
+        res.status(201).send('NEW item CREATED!!!')
+    } else {
+        console.log("NO item created")
+    }
+
+})
 
 app.listen(PORT, () => {
     sequelize.sync({force: true});
