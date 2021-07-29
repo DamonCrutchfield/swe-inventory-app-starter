@@ -70,7 +70,9 @@ app.get('/supplier/:id' , async(req,res) => {
 })
 
 app.delete('/remove-item/:id', async (req, res) => {
-    await Item.destroy({where: { id: req.params.id }})
+    let deleted = await Item.destroy({where: { id: req.params.id }})
+    let items = await Item.findAll()
+    res.json({items});
 });
 
 //Warehouse Routes
@@ -114,9 +116,6 @@ app.post('/new-item', async (req, res) => {
 
 //^^^^^^ tier 2
 
-app.delete('/remove-item/:id', async (req, res) => {
-    await Item.destroy({where: { id: req.params.id }})
-});
 
 app.listen(PORT, () => {
     sequelize.sync({force: true});
