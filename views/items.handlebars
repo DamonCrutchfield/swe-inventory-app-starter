@@ -1,9 +1,18 @@
+<br>
+<h5>Items are listed Below</h5>
 <div>
     {{#each items}}
         <div>
             <a href="/items/{{id}}">Click to see {{name}}</a>
-            
+             <button  id="delete-button" data-id="{{id}}">Delete {{name}}</button>
             
         </div>
     {{/each}}
 </div>
+<br>
+<br>
+<br>
+
+<a href="/add-item-form">
+   <input type="button" value="Add Item" />
+</a>

@@ -9,7 +9,8 @@ const seed = require('./seed.js')
 const seedSup = require("./seedSup.js")
 const seedW = require("./seedW.js")
 const seedUser = require("./seedUser.js")
-const seedInv = require("./seedInv.js")
+const seedInv = require("./seedInv.js");
+
 
 
 
@@ -88,7 +89,7 @@ app.get('/inventory/:id', async (req,res) => {
     const inventory = await Inventory.findByPk(req.params.id)
     res.render("inventory", {inventory} )
 })
-
+//adding item routes
 app.get('/add-item-form', (req, res) => {
     res.render('addItemForm');
 })
@@ -101,8 +102,16 @@ app.post('/new-item', async (req, res) => {
     } else {
         console.log("NO item created")
     }
+    
+
 
 })
+
+//^^^^^^ tier 2
+
+app.delete('/remove-item/:id', async (req, res) => {
+    await Item.destroy({where: { id: req.params.id }})
+});
 
 app.listen(PORT, () => {
     sequelize.sync({force: true});
